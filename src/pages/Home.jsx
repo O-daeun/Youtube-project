@@ -3,18 +3,24 @@ import { Link, useOutletContext } from 'react-router-dom';
 
 export default function Home() {
   const {data} = useOutletContext();
-  console.log(data);
   return (
     <div>
       <ul>
-        <li>
-          <Link to={`/watch`}>
-            {data.items[0].snippet.thumbnails.default.url}
-          </Link>
-        </li>
-        <li>
-          <Link to={`/watch`}>영상클릭</Link>
-        </li>
+        {
+          data.items.map(item => (
+            <li key={item.id.videoId ? item.id.videoId : item.id.channelId}>
+              <Link to={`/watch`}>
+                <div>
+                  <img alt='' src={item.snippet.thumbnails.high.url} />
+                </div>
+                <div>
+                  <h3>{item.snippet.title}</h3>
+                  <p>조회수 </p>
+                </div>
+              </Link>
+            </li>
+          ))
+        }
       </ul>
       
     </div>

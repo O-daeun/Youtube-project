@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
 import Root from './pages/Root';
+import Results from './pages/Results';
 
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: '/results',
+        element: <Results />,
       },
       {
         path: '/watch',
