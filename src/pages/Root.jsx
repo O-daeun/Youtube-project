@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 
 export default function Root() {
   const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=blackpink&key=AIzaSyChOv8L_-0aJt78-o8QPkKDzrbKWFigiGw').then(res =>
+    fetch('/videos/popular.json').then(res =>
       res.json()
     )
   )

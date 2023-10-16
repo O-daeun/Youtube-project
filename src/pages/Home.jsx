@@ -7,9 +7,9 @@ export default function Home() {
     <div>
       <ul>
         {
-          data.items.map(item => (
-            <li key={item.id.videoId ? item.id.videoId : item.id.channelId}>
-              <Link to={`/watch`}>
+          data.items.map(item => 
+            <li key={typeof item.id === 'string' ? item.id : item.id.videoId ? item.id.videoId : item.id.channelId}>
+              <Link to={`/videos/watch/id`}>
                 <div>
                   <img alt='' src={item.snippet.thumbnails.high.url} />
                 </div>
@@ -18,11 +18,10 @@ export default function Home() {
                   <p>조회수 </p>
                 </div>
               </Link>
-            </li>
-          ))
+            </li> 
+          )
         }
       </ul>
-      
     </div>
   );
 }

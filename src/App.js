@@ -8,7 +8,6 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
 import Root from './pages/Root';
-import Results from './pages/Results';
 
 
 const router = createBrowserRouter([
@@ -22,11 +21,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/results',
-        element: <Results />,
+        path: '/videos',
+        element: <Home />,
       },
       {
-        path: '/watch',
+        path: '/videos/watch/id',
         element: <Detail />,
       }
     ]
