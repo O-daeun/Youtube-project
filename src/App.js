@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
 import Root from './pages/Root';
+import Search from './pages/Search';
 
 
 const router = createBrowserRouter([
@@ -21,11 +22,15 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/videos',
+        path: 'videos',
         element: <Home />,
       },
       {
-        path: '/videos/watch/id',
+        path: 'videos/:keyword',
+        element: <Search />,
+      },
+      {
+        path: 'videos/watch/:videoId',
         element: <Detail />,
       }
     ]
