@@ -1,50 +1,24 @@
 import React from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { QueryClient, QueryClientProvider } from 'react-query';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Detail from './pages/Detail';
-import Root from './pages/Root';
-import Search from './pages/Search';
+import { Outlet } from "react-router-dom";
+import { useQuery } from 'react-query';
+import Header from './components/Header';
 
+export default function App() {
+  const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('/videos/popular.json').then(res =>
+      res.json()
+    )
+  )
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <NotFound />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: 'videos',
-        element: <Home />,
-      },
-      {
-        path: 'videos/:keyword',
-        element: <Search />,
-      },
-      {
-        path: 'videos/watch/:videoId',
-        element: <Detail />,
-      }
-    ]
-  },
-]);
+  if (isLoading) return 'Loading...'
 
-const queryClient = new QueryClient();
+  if (error) return 'An error has occurred: ' + error.message
 
-function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <div className='bg-gray-800 text-white'>
+      <Header />
+      <Outlet context={{data}} />
+    </div>
   );
 }
 
-export default App;

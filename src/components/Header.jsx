@@ -16,24 +16,25 @@ export default function Header({ setKeyword }) {
   };
 
   return (
-    <div>
-      <h1>
-        <Link to={`/`} onClick={handleClick}>
-          <BsYoutube />
-          YOUTUBE
+    <header className="border-b border-whit flex items-center space-x-20 px-10 py-5">
+      <h1 className="text-4xl">
+        <Link to={`/`} className="flex items-end gap-2" onClick={handleClick}>
+          <BsYoutube className="text-[#ff0000]" />
+          <b>Youtube</b>
         </Link>
       </h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex">
         <input
           type="text"
-          placeholder="검색어를 입력하시오."
+          placeholder="Search..."
+          className="w-80 h-10 bg-black px-3 border-0 outline-0"
           value={text}
           onChange={handleChange}
         ></input>
-        <button type="submit">
-          <BsSearch />
+        <button type="submit" className="w-10 h-10 bg-gray-600 border-0 outline-0">
+          <BsSearch className="m-auto" />
         </button>
       </form>
-    </div>
+    </header>
   );
 }
