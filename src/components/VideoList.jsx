@@ -1,32 +1,19 @@
 import React from "react";
-import { Link, useOutletContext, useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 
 export default function VideoList() {
   const { data } = useOutletContext();
   const { keyword } = useParams();
   return (
     <>
-        <p>{keyword}</p>
+        <p>{keyword ? `🔍${keyword}` : '🔥Hot'}</p>
       <ul>
-        {data.items.map((item) => (
+        {data.items.map((item, index) => (
           <li
-            key={
-              typeof item.id === "string"
-                ? item.id
-                : item.id.videoId
-                ? item.id.videoId
-                : item.id.channelId
-            }
+            key={index}
           >
-            <Link to={``}>
-              <div>
-                <img alt="" src={item.snippet.thumbnails.high.url} />
-              </div>
-              <div>
-                <h3>{item.snippet.title}</h3>
-                <p>조회수 </p>
-              </div>
-            </Link>
+            <h3>{item.snippet.title}</h3>
+            
           </li>
         ))}
       </ul>

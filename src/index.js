@@ -11,7 +11,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Detail from './pages/Detail';
-import Search from './pages/Search';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'videos/:keyword',
-        element: <Search />,
+        element: <Home />,
       },
       {
         path: 'videos/watch/:videoId',
