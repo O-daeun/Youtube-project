@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import VideoCard from "../components/VideoCard";
+import FakeYoutube from "../api/fakeYoutube";
 
 export default function Videos() {
   const { keyword } = useParams();
@@ -12,10 +13,10 @@ export default function Videos() {
     data: videos,
   } = useQuery({
     queryKey: ["videos", keyword],
-    queryFn: () =>
-      fetch(`/videos/${keyword ? "search" : "popular"}.json`)
-        .then((res) => res.json())
-        .then((data) => data.items),
+    queryFn: () => {
+        const youtube = new FakeYoutube();
+        return youtube.search(keyword);
+    }
   });
 
   return (
@@ -25,8 +26,8 @@ export default function Videos() {
       {error && <p>Someting is wrong 😿</p>}
       {videos && (
         <ul>
-          {videos.map(video => (
-            <VideoCard key={video.id} video={video}  />
+          {videos.map((video) => (
+            <VideoCard key={video.id} video={video} />
           ))}
         </ul>
       )}
