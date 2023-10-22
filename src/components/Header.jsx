@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { BsYoutube, BsSearch } from "react-icons/bs";
 
-export default function Header({ setVideoUrl }) {
+export default function Header() {
   const [text, setText] = useState("");
   const navigate = useNavigate();
   const { keyword } = useParams();
@@ -10,15 +10,13 @@ export default function Header({ setVideoUrl }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/videos/${text}`);
-    setVideoUrl("search");
   };
   const handleChange = (e) => setText(e.target.value);
   const handleClick = () => {
-    setVideoUrl("popular");
     setText("");
   };
 
-  useEffect(() => setText(keyword || ''), [keyword]);
+  useEffect(() => setText(keyword || ""), [keyword]);
 
   return (
     <header className="flex items-center w-full border-b border-white space-x-20 px-10 py-5">

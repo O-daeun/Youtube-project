@@ -1,16 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { QueryClient, QueryClientProvider } from 'react-query';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Detail from './pages/Detail';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+import Detail from "./pages/Detail";
+import Videos from "./pages/Videos";
 
 const router = createBrowserRouter([
   {
@@ -20,32 +16,28 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Videos />,
       },
       {
-        path: 'videos',
-        element: <Home />,
+        path: "videos",
+        element: <Videos />,
       },
       {
-        path: 'videos/:keyword',
-        element: <Home />,
+        path: "videos/:keyword",
+        element: <Videos />,
       },
       {
-        path: 'videos/watch/:videoId',
+        path: "videos/watch/:videoId",
         element: <Detail />,
-      }
-    ]
+      },
+    ],
   },
 ]);
 
-const queryClient = new QueryClient();
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
