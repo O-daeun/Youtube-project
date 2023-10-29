@@ -5,8 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "./pages/NotFound";
-import Detail from "./pages/Detail";
 import Videos from "./pages/Videos";
+import VideoDetails from "./pages/VideoDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "videos/watch/:videoId",
-        element: <Detail />,
+        element: <VideoDetails />,
       },
     ],
   },
