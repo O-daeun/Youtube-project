@@ -24,7 +24,7 @@ export default function Header() {
         <BsYoutube className="text-4xl text-[#ff0000]" />
         <h1 className="text-4xl">Youtube</h1>
       </Link>
-      <form onSubmit={handleSubmit} className="flex w-full justify-center">
+      <form onSubmit={handleSubmit} className="flex w-full">
         <input
           type="text"
           placeholder="Search..."
