@@ -1,19 +1,17 @@
 import React from "react";
-import {format, register} from 'timeago.js';
-import koLocale from 'timeago.js/lib/lang/ko';
+import { formatAgo } from "../util/date";
 
-register('ko', koLocale);
 export default function VideoCard({ video }) {
   const {thumbnails, title, channelTitle, publishTime, publishedAt} = video.snippet;
   return (
-    <li className="w-1/2 md:w-1/3 p-1">
+    <li>
       <img src={thumbnails.medium.url} alt="" className="w-full" />
-      <h2 className="text-lg font-bold mt-2">{title}</h2>
-      <p className="text-sm">{channelTitle}</p>
-      <p className="text-sm">
+      <h2 className="font-semibold my-2 line-clamp-2">{title}</h2>
+      <p className="text-sm opacity-80">{channelTitle}</p>
+      <p className="text-sm opacity-80">
         {publishTime
-          ? format(publishTime, 'ko')
-          : format(publishedAt, 'ko')}
+          ? formatAgo(publishTime, 'ko')
+          : formatAgo(publishedAt, 'ko')}
       </p>
     </li>
   );
