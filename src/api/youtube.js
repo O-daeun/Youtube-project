@@ -37,4 +37,28 @@ export default class Youtube {
       })
       .then((res) => res.data.items);
   }
+
+  async detail(videoId) {
+    return this.apiClient
+      .detail({
+        params: {
+          part: "snippet",
+          id: videoId,
+        },
+      })
+      .then((res) => res.data.items[0])
+  }
+
+  async channel(channelId) {
+    return this.apiClient
+      .channel({
+        params: {
+          part: "snippet",
+          id: channelId,
+        },
+      })
+      .then((res) => res.data.items[0])
+  }
+
+  
 }

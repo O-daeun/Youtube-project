@@ -1,10 +1,28 @@
-import React from 'react';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useYoutubeApi } from "../context/YoutubeApiContext";
+import { useQuery } from "react-query";
+import VideoPlay from "../components/VideoPlay";
+import VideoSideList from "../components/VideoSideList";
 
 export default function VideoDetails() {
-  return (
-    <div>
-      썸네일/정보/댓글
-    </div>
-  );
+  const { videoId } = useParams();
+  const { youtube } = useYoutubeApi();
+  const {
+    isLoading,
+    error,
+    data: videos,
+  } = useQuery({
+    queryKey: ["detail", videoId],
+    queryFn: () => youtube.detail(videoId),
+  });
+  if (isLoading) return <p>로딩중</p>;
+  if (error) return <p>에러</p>;
+  if (videos)
+    return (
+      <div className="flex">
+        <VideoPlay videos={videos} />
+        <VideoSideList keyword={videos.snippet.channelTitle} />
+      </div>
+    );
 }
-
