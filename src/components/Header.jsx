@@ -21,8 +21,8 @@ export default function Header() {
   return (
     <header className="flex items-center w-full border-b border-white space-x-20 px-10 py-5">
       <Link to={`/`} className="flex items-end gap-2" onClick={handleClick}>
-        <BsYoutube className="text-4xl text-[#ff0000]" />
-        <h1 className="text-4xl">Youtube</h1>
+        <BsYoutube className="text-2xl md:text-4xl text-[#ff0000]" />
+        <h1 className="text-xl md:text-4xl">Youtube</h1>
       </Link>
       <form onSubmit={handleSubmit} className="flex w-full">
         <input

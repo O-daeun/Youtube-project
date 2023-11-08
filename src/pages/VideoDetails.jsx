@@ -26,7 +26,7 @@ export default function VideoDetails() {
           <iframe
             id={video.id}
             width="100%"
-            height="640"
+            className="h-[400px] md:h-[640px]"
             src={`https://www.youtube.com/embed/${video.id}`}
             title={video.snippet.title}
           />
