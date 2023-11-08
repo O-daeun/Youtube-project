@@ -21,23 +21,22 @@ export default function VideoDetails() {
   if (error) return <p>에러</p>;
   if (video)
     return (
-      <section className="flex flex-col xl:flex-row gap-4">
+      <section className="flex flex-col xl:flex-row gap-4 my-4">
         <article className="basis-2/3">
           <iframe
             id={video.id}
-            className="my-4"
             width="100%"
             height="640"
             src={`https://www.youtube.com/embed/${video.id}`}
             title={video.snippet.title}
           />
-          <div className="px-10">
+          <div className="px-4">
             <h2 className="my-4 text-xl font-bold">{video.snippet.title}</h2>
             <ChannelTitle
               id={video.snippet.channelId}
               name={video.snippet.channelTitle}
             />
-            <p className="my-10 whitespace-pre-wrap">
+            <p className="py-4 my-4 whitespace-pre-wrap border-y-2 border-slate-700">
               {video.snippet.description}
             </p>
           </div>

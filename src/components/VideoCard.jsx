@@ -12,7 +12,7 @@ export default function VideoCard({ video, type }) {
       onClick={() => {
         navigate(`/videos/watch/${video.id}`, { state: { videoId: video.id } });
       }}
-      className={isList ? "flex gap-1 m-2" : ""}
+      className={isList ? "flex gap-1" : ""}
     >
       <img src={thumbnails.medium.url} alt="" className={isList ? "w-60 mr-2" : "w-full"} />
       <div>
