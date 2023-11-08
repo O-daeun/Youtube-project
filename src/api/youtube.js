@@ -17,9 +17,8 @@ export default class Youtube {
           q: keyword,
         },
       })
-      .then((res) => res.data.items)
-      .then((items) =>
-        items.map((item) => ({
+      .then((res) =>
+        res.data.items.map((item) => ({
           ...item,
           id: item.id.videoId ? item.id.videoId : item.id.channelId,
         }))
@@ -46,19 +45,17 @@ export default class Youtube {
           id: videoId,
         },
       })
-      .then((res) => res.data.items[0])
+      .then((res) => res.data.items[0]);
   }
 
-  async channel(channelId) {
+  async channelImageURL(id) {
     return this.apiClient
-      .channel({
+      .channelImageURL({
         params: {
           part: "snippet",
-          id: channelId,
+          id,
         },
       })
-      .then((res) => res.data.items[0])
+      .then((res) => res.data.items[0].snippet.thumbnails.default.url);
   }
-
-  
 }
