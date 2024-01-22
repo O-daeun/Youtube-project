@@ -16,7 +16,7 @@ export default function VideoSideList({ keyword }) {
   if (error) return <p>에러</p>;
   if (videos)
     return (
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-4 sm:gap-2">
         {videos.map((video) => (
           <VideoCard key={video.id} video={video} type="list" />
         ))}
