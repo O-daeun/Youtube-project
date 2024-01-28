@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Youtube Clone Coding
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/O-daeun/Youtube-project/assets/105799083/1a286fae-d762-44aa-820d-82fa4b81ad57)
 
-## Available Scripts
+<br />
+<br />
 
-In the project directory, you can run:
+## 🕰️ 개발 기간
 
-### `npm start`
+### 2023. 09 - 2023. 10
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🔗 URL
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://youtube-oh.netlify.app
+<br />
+<br />
+<br />
 
-### `npm test`
+## ⚙️ 개발 환경
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React.js**
+- CSS: **Tailwind CSS**
+- API: **Youtube API**
+- Deploy: **Netlify**
+- etc: **React Router, React Query, Axios, timeago.js**
+<br />
 
-### `npm run build`
+## 📌 주요 기능
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 반응형 웹
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<table>
+ <tr>
+  <td>
+   <h4>PC</h4>
+  <img src="https://github.com/O-daeun/Youtube-project/assets/105799083/1a286fae-d762-44aa-820d-82fa4b81ad57" width="730" />  
+  </td>
+  <td>
+   <h4>Mobile</h4>
+   <img src="https://github.com/O-daeun/Youtube-project/assets/105799083/d61db915-036c-49c6-9cc9-776b4baeea61" width="200" />  
+  </td>
+ </tr>
+</table>
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 메인페이지
 
-### `npm run eject`
+<table>
+ <tr>
+  <td>
+   <img src="https://github.com/O-daeun/Youtube-project/assets/105799083/f513d521-898a-4ca3-be32-a7b958eacdc8" width="615" />
+  </td>
+  <td>
+   <h4>인기동영상</h4>
+   <p> - 홈에서 실시간 인기동영상 리스트를 보여줌</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="https://github.com/O-daeun/Youtube-project/assets/105799083/e9d0ad6c-f5b5-48ab-aeae-4291d8159145" width="615" />
+  </td>
+  <td>
+   <h4>검색 기능</h4>
+    <p>- 키워드 검색 시 관련 영상 리스트를 보여줌</p>
+  </td>
+ </tr>
+</table>
+<br />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 상세페이지
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<table>
+ <tr>
+  <td colspan="2">
+   <img src="https://github.com/O-daeun/Youtube-project/assets/105799083/80f6039c-381a-43d1-97e6-57d2a2237c52" />
+  </td>
+</tr>
+<tr>
+  <td>
+   <h4>영상재생 및 상세 정보</h4>
+    <p>- 해당 영상 재생 및 타이틀, 채널명, 영상설명을 제공함</p>
+    <br />
+  </td>
+  <td>
+  <h4>사이드 리스트</h4>
+    <p>- 우측에 해당 채널의 다른 영상들을 나열하여 보여줌</p>
+    <br />
+  </td>
+ </tr>
+</table>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br />
+<br />
