@@ -47,6 +47,10 @@ https://youtube-oh.netlify.app
 
 ### 메인페이지
 
+<p>
+ - Youtube API를 활용하여 Youtube 영상 및 관련 정보를 보여줌 <br />
+ - timeago.js를 활용하여 얼마 전에 올라온 영상인지를 한 눈에 확인할 수 있음
+</p>
 <table>
  <tr>
   <td>
@@ -71,6 +75,9 @@ https://youtube-oh.netlify.app
 
 ### 상세페이지
 
+<p>
+ - 영상 리스트 중 하나를 선택하면 상세 페이지로 들어옴
+</p>
 <table>
  <tr>
   <td colspan="2">
