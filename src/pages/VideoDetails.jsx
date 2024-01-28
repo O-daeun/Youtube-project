@@ -27,7 +27,7 @@ export default function VideoDetails() {
             id={video.id}
             width="100%"
             className="h-[200px] sm:h-[400px] md:h-[640px]"
-            src={`https://www.youtube.com/embed/${video.id}`}
+            src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1`}
             title={video.snippet.title}
           />
           <div className="px-4">
